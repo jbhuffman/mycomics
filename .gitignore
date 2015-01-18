@@ -11,4 +11,5 @@ Thumbs.db
 =======
 .env.*.php
 .env.php
+app/config/database.php
 >>>>>>> 84a68cc24bf66b8225b780024de5222c2a7e5961
