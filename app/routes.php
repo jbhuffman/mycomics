@@ -22,7 +22,13 @@ Route::get('/about', function()
 
 Route::get('', 'TitlesController@index');
 
-Route::resource('titles', 'TitlesController', ['before' => 'auth']);
+Route::group(array('before' => 'auth'), function()
+{
+    Route::resource('titles', 'TitlesController');
+    Route::resource('mybooks', 'MyBooksController');
+    Route::resource('publishers', 'PublishersController', ['before' => 'auth']);
+    Route::resource('vendors', 'VendorsController', ['before' => 'auth']);
+});
 /*
 Route::group(array('prefix' => 'titles'), function() {
     Route::get('', array('uses' => 'TitlesController@index', 'as' => 'titles.list'));
@@ -36,7 +42,6 @@ Route::group(array('prefix' => 'titles'), function() {
 });
 */
 
-Route::resource('mybooks', 'MyBooksController', ['before' => 'auth']);
 /*
 Route::group(array('prefix' => 'mybooks'), function() {
     Route::get('', array('uses' => 'MyBooksController@index', 'as' => 'mybooks.list'));
@@ -49,7 +54,6 @@ Route::group(array('prefix' => 'mybooks'), function() {
 });
 */
 
-Route::resource('publishers', 'PublishersController', ['before' => 'auth']);
 /*
 Route::group(array('prefix' => 'publishers'), function() {
     Route::get('', array('uses' => 'PublishersController@index', 'as' => 'publishers.list'));
@@ -62,7 +66,6 @@ Route::group(array('prefix' => 'publishers'), function() {
 });
 */
 
-Route::resource('vendors', 'VendorsController', ['before' => 'auth']);
 /*
 Route::group(array('prefix' => 'vendors'), function() {
     Route::get('', array('uses' => 'VendorsController@index', 'as' => 'vendors.list'));
