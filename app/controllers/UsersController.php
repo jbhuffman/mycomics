@@ -31,7 +31,34 @@ class UsersController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+        // validate
+        // read more on validation at http://laravel.com/docs/validation
+        $rules = array(
+            'username' => 'required',
+            'password' => 'required'
+        );
+
+        $validator = Validator::make(Input::all(), $rules);
+
+        // process the login
+        if ($validator->fails()) {
+            return Redirect::to('user/create')
+                ->withErrors($validator)
+                ->withInput(Input::except('password'));
+        } else {
+            // store
+            $user = new User;
+            $user->first = Input::get('first');
+            $user->last = Input::get('last');
+            $user->password = Input::get('password');
+            $user->username = Input::get('username');
+            $user->email = Input::get('email');
+            $user->save();
+
+            // redirect
+            Session::flash('message', 'Successfully added user!');
+            return Redirect::route('user.index');
+        }
 	}
 
 
