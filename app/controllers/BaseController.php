@@ -15,8 +15,4 @@ class BaseController extends Controller {
 		}
 	}
 
-	public function __construct()
-	{
-		$this->beforeFilter('auth');
-	}
 }
