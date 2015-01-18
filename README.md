@@ -1,2 +1,0 @@
-# mycomics
-My comics page
