@@ -123,7 +123,7 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
         'Way\Generators\GeneratorsServiceProvider',
         'Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider',
-        'Chumper\Datatable\DatatableServiceProvider',
+        'Bllim\Datatables\DatatablesServiceProvider',
 	),
 
 	/*
@@ -162,7 +162,7 @@ return array(
 		'Controller'      => 'Illuminate\Routing\Controller',
 		'Cookie'          => 'Illuminate\Support\Facades\Cookie',
 		'Crypt'           => 'Illuminate\Support\Facades\Crypt',
-        'Datatable'       => 'Chumper\Datatable\Facades\DatatableFacade',
+        'Datatables'      => 'Bllim\Datatables\Facades\Datatables',
 		'DB'              => 'Illuminate\Support\Facades\DB',
 		'Eloquent'        => 'Illuminate\Database\Eloquent\Model',
 		'Event'           => 'Illuminate\Support\Facades\Event',
