@@ -1,14 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "laravel/laravel",
-	"description": "The Laravel Framework.",
-	"keywords": ["framework", "laravel"],
-	"license": "MIT",
-	"require": {
-		"laravel/framework": "4.2.*",
-        "bllim/datatables": "*"
-	},
-=======
     "name": "laravel/laravel",
     "description": "The Laravel Framework.",
     "keywords": ["framework", "laravel"],
@@ -17,7 +7,6 @@
         "laravel/framework": "4.2.*",
         "bllim/datatables": "*"
     },
->>>>>>> f168fea863f19853a85fd55b3145f219be6fc070
     "require-dev": {
         "xethron/migrations-generator": "dev-master"
     },
