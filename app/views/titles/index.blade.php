@@ -1,11 +1,11 @@
 @extends('layout')
 
 @section('styles')
-    {{ HTML::style('//cdnjs.cloudflare.com/ajax/libs/datatables/1.10.1/css/jquery.dataTables.min.css') }}
+    {{ HTML::style('//cdnjs.cloudflare.com/ajax/libs/datatables/1.10.5/css/jquery.dataTables.min.css') }}
 @stop
 
 @section('scripts')
-    {{ HTML::script('//cdnjs.cloudflare.com/ajax/libs/datatables/1.10.1/js/jquery.dataTables.min.js') }}
+    {{ HTML::script('//cdnjs.cloudflare.com/ajax/libs/datatables/1.10.5/js/jquery.dataTables.min.js') }}
     {{ HTML::script('js/titles/index.js') }}
 @stop
 
