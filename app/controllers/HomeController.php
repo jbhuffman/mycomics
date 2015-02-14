@@ -20,4 +20,44 @@ class HomeController extends BaseController {
 		return View::make('hello');
 	}
 
+	public function showLogin()
+	{
+		// show the login form
+		return View::make('login');
+	}
+
+	public function doLogin()
+	{
+		// process the login
+		$rules = array(
+			'email' => 'required|email',
+			'password' => 'required|alphanum|min:3'
+		);
+
+		$validator = Validator::make(Input::all(), $rules);
+
+		if ($validator->fails()) {
+			return Redirect::to('login')
+				->withErrors($validator)
+				->withInput(Input::except('password'));
+		} else {
+			$userdata = array(
+				'email' => Input::get('email'),
+				'password' => Input::get('password')
+			);
+
+			if (Auth::attempt($userdata)) {
+				echo 'Success';
+			} else {
+				return Redirect::to('login');
+			}
+		}
+	}
+
+	public function doLogout()
+	{
+		Auth::logout();
+		return Redirect::to('login');
+	}
+
 }
