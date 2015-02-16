@@ -73,6 +73,7 @@
                                 @endif
                             </ul>
                         </li>
+                        @if (Auth::check())
                         <li>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Maintenance <span class="caret"></span></a>
                             <ul class="dropdown-menu multi-level">
@@ -80,9 +81,7 @@
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Publishers</a>
                                     <ul class="dropdown-menu">
                                         <li><a href="{{ URL::to('publishers') }}">View All</a></li>
-                                        @if (Auth::check())
                                         <li><a href="{{ URL::to('publishers/create') }}">Add Publisher</a></li>
-                                        @endif
                                     </ul>
                                 </li>
                                 <li class="divider"></li>
@@ -90,13 +89,12 @@
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Vendors</a>
                                     <ul class="dropdown-menu">
                                         <li><a href="{{ URL::to('vendors') }}">View All</a></li>
-                                        @if (Auth::check())
                                         <li><a href="{{ URL::to('vendors/create') }}">Add Vendor</a></li>
-                                        @endif
                                     </ul>
                                 </li>
                             </ul>
                         </li>
+                        @endif
                     </ul>
                 </div>
             </div>
