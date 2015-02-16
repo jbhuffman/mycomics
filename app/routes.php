@@ -20,7 +20,11 @@ Route::get('/about', function()
     return View::make('about');
 });
 
-Route::get('', 'TitlesController@index');
+Route::group(array('prefix' => 'titles'), function() {
+    Route::get('', array('uses' => 'TitlesController@index', 'as' => 'titles.list'));
+    Route::get('{id}', array('uses' => 'TitlesController@show', 'as' => 'titles.show'));
+});
+
 Route::get('', 'MyBooksController@index');
 
 Route::group(array('before' => 'auth'), function()
