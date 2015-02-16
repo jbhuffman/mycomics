@@ -7,7 +7,6 @@
     {{ HTML::ul($errors->all()) }}
 
     {{ Form::model($mybook, array('route' => array('mybooks.update', $mybook->id), 'method' => 'PUT')) }}
-        {{ Form::token() }}
 
         <div class="form-group">
             {{ Form::label('titleid', 'Title') }}

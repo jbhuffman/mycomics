@@ -7,7 +7,6 @@
     {{ HTML::ul($errors->all()) }}
 
     {{ Form::model($vendor, array('route' => array('vendors.update', $vendor->id), 'method' => 'PUT')) }}
-        {{ Form::token() }}
 
         <div class="form-group">
             {{ Form::label('name', 'Vendor') }}

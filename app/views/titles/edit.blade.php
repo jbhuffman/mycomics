@@ -7,7 +7,6 @@
     {{ HTML::ul($errors->all()) }}
 
     {{ Form::model($title, array('route' => array('titles.update', $title->id), 'method' => 'PUT')) }}
-        {{ Form::token() }}
 
         <div class="form-group">
             {{ Form::label('title', 'Title') }}

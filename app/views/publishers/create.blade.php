@@ -7,7 +7,6 @@
     {{ HTML::ul($errors->all()) }}
 
     {{ Form::open(array('url' => 'publishers')) }}
-        {{ Form::token() }}
 
         <div class="form-group">
             {{ Form::label('name', 'Publisher') }}

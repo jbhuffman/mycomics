@@ -7,7 +7,6 @@
     {{ HTML::ul($errors->all()) }}
 
     {{ Form::open(array('url' => 'mybooks', 'method' => 'POST')) }}
-        {{ Form::token() }}
 
         <div class="form-group">
             {{ Form::label('titleid', 'Title') }}
