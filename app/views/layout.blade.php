@@ -16,15 +16,6 @@
 
         {{ HTML::style('css/dropdown.css') }}
 
-        <!-- Scripts -->
-        {{ HTML::script('//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js') }}
-        <script>
-            var URL = {
-                'base' : '{{ URL::to('/') }}',
-                'current' : '{{ URL::current() }}',
-                'full' : '{{ URL::full() }}'
-            };
-        </script>
     </head>
     <body>
         <!--@yield('navbar.prepend')
@@ -124,13 +115,23 @@
             -->
             </div>
         </div>
+        <!-- Scripts -->
+        {{ HTML::script('//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js') }}
+
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         {{ HTML::script('//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js')}}
         <!-- Latest compiled and minified JavaScript -->
         {{ HTML::script('//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js') }}
 
-        @yield('scripts')
         <!-- my scripts -->
+    @yield('scripts')
+        <script>
+            var URL = {
+                'base' : '{{ URL::to('/') }}',
+                'current' : '{{ URL::current() }}',
+                'full' : '{{ URL::full() }}'
+            };
+        </script>
 
     </body>
 </html>
