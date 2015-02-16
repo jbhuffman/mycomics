@@ -28,7 +28,11 @@ class HomeController extends BaseController {
 
     public function doLogin()
     {
-        echo 'Remember :: ' . Input::get('rememberme');
+        if (Input::get('rememberme'))
+            echo 'Remember :: ' . Input::get('rememberme');
+        else
+            echo 'no rememberme';
+
         exit(print_r($_POST,true));
         // process the login
         $rules = array(
