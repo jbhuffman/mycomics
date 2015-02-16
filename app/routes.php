@@ -21,6 +21,7 @@ Route::get('/about', function()
 });
 
 Route::get('', 'TitlesController@index');
+Route::get('', 'MyBooksController@index');
 
 Route::group(array('before' => 'auth'), function()
 {
