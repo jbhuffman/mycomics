@@ -54,7 +54,7 @@
             <div class="container-fluid">
                 <div id="content">
                     {{ Form::open(array('url' => 'login', 'class' => 'form-horizontal')) }}
-                    <h1>Login</h1>
+                    <div class="col-sm-12"><h1>Login</h1></div>
 
                     <!-- if there are login errors, show them here -->
                     <div class="form-group">
