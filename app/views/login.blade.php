@@ -57,25 +57,19 @@
                     <h1>Login</h1>
 
                     <!-- if there are login errors, show them here -->
-                    <div class="row">
-                        <div class="col-md-4">
-                            {{ $errors->first('email') }}
-                            {{ $errors->first('password') }}
-                        </div>
+                    <div class="form-group">
+                        {{ $errors->first('email') }}
+                        {{ $errors->first('password') }}
                     </div>
 
-                    <div class="row">
-                        <div class="col-md-4">
-                            {{ Form::label('email', 'Email Address') }}
-                            {{ Form::text('email', Input::old('email'), array('placeholder' => 'awesome@awesome.com')) }}
-                        </div>
+                    <div class="form-group">
+                        {{ Form::label('email', 'Email Address') }}
+                        {{ Form::text('email', Input::old('email'), array('placeholder' => 'awesome@awesome.com')) }}
                     </div>
 
-                    <div class="row">
-                        <div class="col-md-4">
-                            {{ Form::label('password', 'Password') }}
-                            {{ Form::password('password') }}
-                        </div>
+                    <div class="form-group">
+                        {{ Form::label('password', 'Password') }}
+                        {{ Form::password('password') }}
                     </div>
 
                     <p>{{ Form::submit('Submit!') }}</p>
