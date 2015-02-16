@@ -82,11 +82,16 @@
                         </div>
                     </div>
                     {{ Form::close() }}
-                    <script>
-                        $('input[name="email"]').focus();
-                    </script>
                 </div>
             </div>
         </div>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        {{ HTML::script('//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js')}}
+        <!-- Latest compiled and minified JavaScript -->
+        {{ HTML::script('//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js') }}
+        <script>
+            $('input[name="email"]').focus();
+        </script>
+
     </body>
 </html>
