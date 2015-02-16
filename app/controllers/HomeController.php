@@ -28,6 +28,7 @@ class HomeController extends BaseController {
 
     public function doLogin()
     {
+        exit(print_r($_POST,true));
         // process the login
         $rules = array(
             'email' => 'required|email',
@@ -45,6 +46,7 @@ class HomeController extends BaseController {
                 'email' => Input::get('email'),
                 'password' => Input::get('password')
             );
+            $remember = Input::get('rememberme');
 
             if (Auth::attempt($userdata)) {
                 return Redirect::intended();
