@@ -49,3 +49,14 @@ body {
     -moz-border-radius: 6px 0 6px 6px;
     border-radius: 6px 0 6px 6px;
 }
+
+/* added to handle hover/main links */
+.caret {
+    position: absolute !important;
+    top: 0;
+    right: 0;
+}
+
+.dropdown-toggle.disabled {
+    padding-right: 40px;
+}
