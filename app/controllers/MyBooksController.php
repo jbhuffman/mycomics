@@ -2,6 +2,10 @@
 
 class MyBooksController extends \BaseController
 {
+    public function __construct()
+    {
+        $this->beforeFilter('auth', array('except' => array('index', 'show')));
+    }
 
     /**
      * Display a listing of the resource.

@@ -26,13 +26,12 @@ Route::group(array('prefix' => 'titles'), function() {
     Route::get('{id}', array('uses' => 'TitlesController@show', 'as' => 'titles.show'));
 });
 */
-Route::resource('titles', 'TitlesController');
 
-Route::get('', 'MyBooksController@index');
+Route::resource('titles', 'TitlesController');
+Route::resource('mybooks', 'MyBooksController');
 
 Route::group(array('before' => 'auth'), function()
 {
-    Route::resource('mybooks', 'MyBooksController');
     Route::resource('publishers', 'PublishersController', ['before' => 'auth']);
     Route::resource('vendors', 'VendorsController', ['before' => 'auth']);
 });
