@@ -36,7 +36,7 @@
                     <!-- delete the title (uses the destroy method DESTROY /titles/{id} -->
                     {{ Form::open(array('url' => 'titles/' . $value->id, 'class' => 'pull-right')) }}
                         {{ Form::hidden('_method', 'DELETE') }}
-                        {{ Form::submit('Delete', array('class' => 'btn btn-warning delete-button')) }}
+                        {{ Form::submit('Delete', array('class' => 'btn btn-warning delete-button', 'onclick' => 'if (!confirm("Are you sure you want to delete this title?")) {return false; }')) }}
                     {{ Form::close() }}
                     <script>
                         $('.delete-button').on('click', function() {
