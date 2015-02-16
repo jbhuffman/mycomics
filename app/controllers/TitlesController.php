@@ -6,6 +6,8 @@ class TitlesController extends \BaseController
     public function __construct()
     {
         $this->beforeFilter('auth', array('except' => array('index', 'show')));
+
+        $this->beforeFilter('csrf', array('on' => array('post', 'put', 'delete')));
     }
 
     /**
