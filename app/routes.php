@@ -19,18 +19,19 @@ Route::get('/about', function()
 {
     return View::make('about');
 });
-
+/*
 Route::group(array('prefix' => 'titles'), function() {
     Route::get('', array('uses' => 'TitlesController@index', 'as' => 'titles.list'));
     Route::get('index', array('uses' => 'TitlesController@index', 'as' => 'titles.list'));
     Route::get('{id}', array('uses' => 'TitlesController@show', 'as' => 'titles.show'));
 });
+*/
+Route::resource('titles', 'TitlesController');
 
 Route::get('', 'MyBooksController@index');
 
 Route::group(array('before' => 'auth'), function()
 {
-    Route::resource('titles', 'TitlesController');
     Route::resource('mybooks', 'MyBooksController');
     Route::resource('publishers', 'PublishersController', ['before' => 'auth']);
     Route::resource('vendors', 'VendorsController', ['before' => 'auth']);
