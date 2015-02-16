@@ -1,6 +1,7 @@
 <?php
 
-class TitlesController extends \BaseController {
+class TitlesController extends \BaseController 
+{
 
     /**
      * Display a listing of the resource.
