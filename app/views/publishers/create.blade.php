@@ -14,6 +14,7 @@
         </div>
 
         {{ Form::submit('Add the Publisher!', array('class' => 'btn btn-primary')) }}
+        {{ HTML::linkRoute('publishers.index', 'Cancel', array(), array('class' => 'btn btn-default')) }}
 
     {{ Form::close() }}
 @stop
