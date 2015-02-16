@@ -7,7 +7,7 @@
     {{ HTML::ul($errors->all()) }}
 
     {{ Form::model($publisher, array('route' => array('publishers.update', $publisher->id), 'method' => 'PUT')) }}
-        <input type="hidden" name="token" value="{{ $token }}">
+        {{ Form::token() }}
 
         <div class="form-group">
             {{ Form::label('name', 'Publisher') }}

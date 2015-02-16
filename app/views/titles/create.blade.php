@@ -7,7 +7,7 @@
     {{ HTML::ul($errors->all()) }}
 
     {{ Form::open(array('url' => 'titles', 'method' => 'POST')) }}
-        <input type="hidden" name="token" value="{{ $token }}">
+        {{ Form::token() }}
 
         <div class="form-group">
             {{ Form::label('title', 'Title') }}

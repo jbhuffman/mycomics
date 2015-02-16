@@ -7,7 +7,7 @@
     {{ HTML::ul($errors->all()) }}
 
     {{ Form::model($title, array('route' => array('titles.update', $title->id), 'method' => 'PUT')) }}
-        <input type="hidden" name="token" value="{{ $token }}">
+        {{ Form::token() }}
 
         <div class="form-group">
             {{ Form::label('title', 'Title') }}
