@@ -7,6 +7,7 @@
     {{ HTML::ul($errors->all()) }}
 
     {{ Form::open(array('url' => 'vendors')) }}
+        <input type="hidden" name="token" value="{{ $token }}">
 
         <div class="form-group">
             {{ Form::label('name', 'Vendor') }}

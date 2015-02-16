@@ -44,46 +44,13 @@
         <div id="main">
             <div class="container-fluid">
                 <div id="content">
-                    {{ Form::open(array('url' => 'login', 'class' => 'form-horizontal')) }}
-                    <input type="hidden" name="token" value="{{ $token }}">
-                    <div class="col-sm-12"><h1>Login</h1></div>
-
-                    <!-- if there are login errors, show them here -->
-                    <div class="form-group">
-                        {{ $errors->first('email') }}
-                        {{ $errors->first('password') }}
-                    </div>
-
-                    <div class="form-group">
-                        {{ Form::label('email', 'Email Address', array('class' => 'col-sm-2 control-label')) }}
-                        <div class="col-sm-10">
-                            {{ Form::text('email', Input::old('email'), array('class' => 'form-control', 'placeholder' => 'awesome@awesome.com')) }}
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        {{ Form::label('password', 'Password', array('class' => 'col-sm-2 control-label')) }}
-                        <div class="col-sm-10">
-                            {{ Form::password('password', array('class' => 'form-control', 'placeholder' => 'password')) }}
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <div class="checkbox">
-                                <label>
-                                    <input name="rememberme" type="checkbox" />Remember Me
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                            {{ Form::submit('Sign in', array('class="btn btn-default')) }}
-                        </div>
-                    </div>
-                    {{ Form::close() }}
+                    <form action="{{ action('RemindersController@postReset') }}" method="POST">
+                        <input type="hidden" name="token" value="{{ $token }}">
+                        <input type="email" name="email">
+                        <input type="password" name="password">
+                        <input type="password" name="password_confirmation">
+                        <input type="submit" value="Reset Password">
+                    </form>
                 </div>
             </div>
         </div>
