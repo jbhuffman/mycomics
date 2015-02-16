@@ -20,6 +20,8 @@ Route::get('/about', function()
     return View::make('about');
 });
 
+Route::get('', array('uses' => 'TitlesController@index', 'as' => 'titles.list'));
+
 Route::resource('titles', 'TitlesController');
 Route::resource('mybooks', 'MyBooksController');
 Route::resource('vendors', 'VendorsController', ['before' => 'auth']);
