@@ -47,7 +47,8 @@ class HomeController extends BaseController {
         } else {
             $userdata = array(
                 'email' => Input::get('email'),
-                'password' => Input::get('password')
+                'password' => Input::get('password'),
+                'is_deleted' => 0
             );
 
             if (Auth::attempt($userdata, $remember)) {
