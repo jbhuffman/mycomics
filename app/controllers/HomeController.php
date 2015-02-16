@@ -47,7 +47,7 @@ class HomeController extends BaseController {
 			);
 
 			if (Auth::attempt($userdata)) {
-				echo 'Success';
+				return Redirect::intended();
 			} else {
 				return Redirect::to('login');
 			}
