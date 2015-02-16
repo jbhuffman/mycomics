@@ -2,8 +2,10 @@
 
 @section('content')
     <h2>{{ $title->title }} ({{ count($issues) }})</h2>
+    @if (Auth::check())
     <div class="col-md-6 text-left"><a href="{{ URL::to('titles/create') }}">Add a Title</a></div>
     <div class="col-md-6 text-right"><a href="{{ URL::to('mybooks/create') }}">Add a Book</a></div>
+    @endif
 
     <div class="jumbotron text-center">
         <p class="text-left">
@@ -101,17 +103,21 @@
                         <td>{{ $issue->printing }}</td>
                         <td>{{ $issue->condition }}</td>
                         <td>
+                            @if (Auth::check())
                             <!-- delete the title (uses the destroy method DESTROY /mybooks/{id} -->
                             {{ Form::open(array('url' => 'mybooks/' . $issue->id, 'class' => 'pull-right')) }}
                                 {{ Form::hidden('_method', 'DELETE') }}
                                 {{ Form::submit('Delete', array('class' => 'btn btn-warning delete-button')) }}
                             {{ Form::close() }}
+                            @endif
 
                             <!-- show the title (uses the show method found at GET /mybooks/{id} -->
                             <a class="btn btn-small btn-success pull-left" href="{{ URL::to('mybooks/' . $issue->id) }}">View</a>
 
+                            @if (Auth::check())
                             <!-- edit this title (uses the edit method found at GET /mybooks/{id}/edit -->
                             <a class="btn btn-small btn-info" href="{{ URL::to('mybooks/' . $issue->id . '/edit') }}">Edit</a>
+                            @endif
                         </td>
                     </tr>
     @endforeach
