@@ -28,12 +28,10 @@ class HomeController extends BaseController {
 
     public function doLogin()
     {
+        $remember = false;
         if (Input::get('rememberme'))
-            echo 'Remember :: ' . Input::get('rememberme');
-        else
-            echo 'no rememberme';
+            $remember = true;
 
-        exit(print_r($_POST,true));
         // process the login
         $rules = array(
             'email' => 'required|email',
@@ -51,9 +49,8 @@ class HomeController extends BaseController {
                 'email' => Input::get('email'),
                 'password' => Input::get('password')
             );
-            $remember = Input::get('rememberme');
 
-            if (Auth::attempt($userdata)) {
+            if (Auth::attempt($userdata, $remember)) {
                 return Redirect::intended();
             } else {
                 return Redirect::to('login');
