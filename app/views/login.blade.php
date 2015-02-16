@@ -70,8 +70,9 @@
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                             <div class="checkbox">
-                                {{ Form::label('rememberme', 'Rember Me') }}
-                                {{ Form::checkbox('rememberme', '1') }}
+                                <label>
+                                    <input name="rememberme" type="checkbox" />Remember Me
+                                </label>
                             </div>
                         </div>
                     </div>
