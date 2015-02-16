@@ -94,6 +94,9 @@
                                 </li>
                             </ul>
                         </li>
+                        <li><a href="{{ URL::to('logout') }}">Logout</a></li>
+                        @else
+                        <li><a href="{{ URL::to('login') }}">Login</a></li>
                         @endif
                     </ul>
                 </div>
