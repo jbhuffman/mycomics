@@ -124,7 +124,7 @@
         {{ HTML::script('//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js') }}
 
         <!-- my scripts -->
-    @yield('scripts')
+        @yield('scripts')
         <script>
             var URL = {
                 'base' : '{{ URL::to('/') }}',
