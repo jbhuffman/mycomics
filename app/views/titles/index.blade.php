@@ -43,6 +43,7 @@
                             if (!confirm('Are you sure?')) {
                                 return false;
                             }
+                            alert('test'); return false;
                         });
                     </script>
                     @endif
