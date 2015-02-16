@@ -6,7 +6,7 @@
     <!-- if there are creation errors, they will show here -->
     {{ HTML::ul($errors->all()) }}
 
-    {{ Form::open(array('url' => 'titles/store', 'method' => 'PUT')) }}
+    {{ Form::open(array('url' => 'titles', 'method' => 'POST')) }}
 
         <div class="form-group">
             {{ Form::label('title', 'Title') }}
