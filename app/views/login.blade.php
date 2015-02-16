@@ -53,7 +53,7 @@
         <div id="main">
             <div class="container-fluid">
                 <div id="content">
-                    {{ Form::open(array('url' => 'login')) }}
+                    {{ Form::open(array('url' => 'login', 'class' => 'form-horizontal')) }}
                     <h1>Login</h1>
 
                     <!-- if there are login errors, show them here -->
