@@ -26,7 +26,9 @@
             <strong>Modified:</strong> {{ $mybook->modified }}<br />
     @endif
             <br />
+            @if (Auth::check())
             <a class="btn btn-small btn-info" href="{{ URL::to('mybooks/' . $mybook->id . '/edit') }}">Edit</a>
+            @endif
         </p>
     </div>
 @stop
