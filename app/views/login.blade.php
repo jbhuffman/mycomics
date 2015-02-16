@@ -82,6 +82,9 @@
                         </div>
                     </div>
                     {{ Form::close() }}
+                    <script>
+                        $('input[name="email"]').focus();
+                    </script>
                 </div>
             </div>
         </div>
