@@ -29,11 +29,11 @@ Route::group(array('prefix' => 'titles'), function() {
 
 Route::resource('titles', 'TitlesController');
 Route::resource('mybooks', 'MyBooksController');
+Route::resource('vendors', 'VendorsController', ['before' => 'auth']);
 
 Route::group(array('before' => 'auth'), function()
 {
     Route::resource('publishers', 'PublishersController', ['before' => 'auth']);
-    Route::resource('vendors', 'VendorsController', ['before' => 'auth']);
 });
 /*
 Route::group(array('prefix' => 'titles'), function() {
