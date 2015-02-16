@@ -22,6 +22,7 @@ Route::get('/about', function()
 
 Route::group(array('prefix' => 'titles'), function() {
     Route::get('', array('uses' => 'TitlesController@index', 'as' => 'titles.list'));
+    Route::get('index', array('uses' => 'TitlesController@index', 'as' => 'titles.list'));
     Route::get('{id}', array('uses' => 'TitlesController@show', 'as' => 'titles.show'));
 });
 
