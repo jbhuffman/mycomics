@@ -32,6 +32,14 @@
 
                 <!-- we will also add show, edit, and delete buttons -->
                 <td>
+                    @if (count($value->mybooks) <= 0)
+                    <!-- delete the title (uses the destroy method DESTROY /titles/{id} -->
+                    {{ Form::open(array('url' => 'mybooks/' . $value->id, 'class' => 'pull-right')) }}
+                        {{ Form::hidden('_method', 'DELETE') }}
+                        {{ Form::submit('Delete', array('class' => 'btn btn-warning delete-button')) }}
+                    {{ Form::close() }}
+                    @endif
+
                     <!-- show the title (uses the show method found at GET /titles/{id} -->
                     <a class="btn btn-small btn-success" href="{{ URL::to('titles/' . $value->id) }}">View</a>
 
