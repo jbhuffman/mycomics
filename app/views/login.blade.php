@@ -77,7 +77,9 @@
                     </div>
 
                     <div class="form-group">
-                        {{ Form::submit('Submit!') }}
+                        <div class="col-sm-offset-2 col-sm-10">
+                            {{ Form::submit('Sign in', array('class="btn btn-default')) }}
+                        </div>
                     </div>
                     {{ Form::close() }}
                 </div>
