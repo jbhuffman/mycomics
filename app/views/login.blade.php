@@ -69,6 +69,15 @@
 
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
+                            <div class="checkbox">
+                                {{ Form::label('rememberme') }}
+                                {{ Form::checkbox('rememberme', '1') }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
                             {{ Form::submit('Sign in', array('class="btn btn-default')) }}
                         </div>
                     </div>
