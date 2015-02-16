@@ -50,9 +50,9 @@
                         <li class="active"><a href="/">Home</a></li>
                         <li><a href="{{ URL::to('about') }}">About</a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle disabled" data-toggle="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 My Books
-                                <a href="#" class="dropdown-toggle"><span class="caret"></span></a>
+                                <!--a href="#" class="dropdown-toggle"--><span class="caret"></span><!--/a-->
                             </a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="{{ URL::to('mybooks') }}">View All Books</a></li>

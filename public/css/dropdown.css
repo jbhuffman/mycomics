@@ -51,6 +51,7 @@ body {
 }
 
 /* added to handle hover/main links */
+/*
 .caret {
     position: absolute !important;
     top: 0;
@@ -60,3 +61,4 @@ body {
 .dropdown-toggle.disabled {
     padding-right: 40px;
 }
+*/
