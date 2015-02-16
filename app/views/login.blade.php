@@ -76,7 +76,9 @@
                         </div>
                     </div>
 
-                    <p>{{ Form::submit('Submit!') }}</p>
+                    <div class="form-group">
+                        {{ Form::submit('Submit!') }}
+                    </div>
                     {{ Form::close() }}
                 </div>
             </div>
