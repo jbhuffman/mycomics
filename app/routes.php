@@ -19,23 +19,14 @@ Route::get('/about', function()
 {
     return View::make('about');
 });
-/*
-Route::group(array('prefix' => 'titles'), function() {
-    Route::get('', array('uses' => 'TitlesController@index', 'as' => 'titles.list'));
-    Route::get('index', array('uses' => 'TitlesController@index', 'as' => 'titles.list'));
-    Route::get('{id}', array('uses' => 'TitlesController@show', 'as' => 'titles.show'));
-});
-*/
 
 Route::resource('titles', 'TitlesController');
 Route::resource('mybooks', 'MyBooksController');
 Route::resource('vendors', 'VendorsController', ['before' => 'auth']);
+Route::resource('publishers', 'PublishersController', ['before' => 'auth']);
 
-Route::group(array('before' => 'auth'), function()
-{
-    Route::resource('publishers', 'PublishersController', ['before' => 'auth']);
-});
 /*
+Route::group(array('before' => 'auth'), function(){});
 Route::group(array('prefix' => 'titles'), function() {
     Route::get('', array('uses' => 'TitlesController@index', 'as' => 'titles.list'));
     Route::get('create', array('uses' => 'TitlesController@create', 'as' => 'titles.create'));

@@ -1,6 +1,11 @@
 <?php
 
-class PublishersController extends \BaseController {
+class PublishersController extends \BaseController
+{
+    public function __construct()
+    {
+        $this->beforeFilter('auth', array('except' => array('index', 'show')));
+    }
 
     /**
      * Display a listing of the resource.
