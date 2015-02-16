@@ -38,6 +38,13 @@
                         {{ Form::hidden('_method', 'DELETE') }}
                         {{ Form::submit('Delete', array('class' => 'btn btn-warning delete-button')) }}
                     {{ Form::close() }}
+                    <script>
+                        $('.delete-button').on('click', function() {
+                            if (!confirm('Are you sure?')) {
+                                return false;
+                            }
+                        });
+                    </script>
                     @endif
 
                     <!-- show the title (uses the show method found at GET /titles/{id} -->
