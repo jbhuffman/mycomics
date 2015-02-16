@@ -56,9 +56,9 @@
                             </a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="{{ URL::to('mybooks') }}">View All Books</a></li>
-                                @unless (Auth::check())
+                                @if (Auth::check())
                                 <li><a href="{{ URL::to('mybooks/create') }}">Add a Book</a></li>
-                                @endunless
+                                @endif
                             </ul>
                         </li>
                         <li class="dropdown">
@@ -68,9 +68,9 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a href="{{ URL::to('titles') }}">View All</a></li>
-                                @unless (Auth::check())
+                                @if (Auth::check())
                                 <li><a href="{{ URL::to('titles/create') }}">Add Title</a></li>
-                                @endunless
+                                @endif
                             </ul>
                         </li>
                         <li>
@@ -80,9 +80,9 @@
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Publishers</a>
                                     <ul class="dropdown-menu">
                                         <li><a href="{{ URL::to('publishers') }}">View All</a></li>
-                                        @unless (Auth::check())
+                                        @if (Auth::check())
                                         <li><a href="{{ URL::to('publishers/create') }}">Add Publisher</a></li>
-                                        @endunless
+                                        @endif
                                     </ul>
                                 </li>
                                 <li class="divider"></li>
@@ -90,9 +90,9 @@
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Vendors</a>
                                     <ul class="dropdown-menu">
                                         <li><a href="{{ URL::to('vendors') }}">View All</a></li>
-                                        @unless (Auth::check())
+                                        @if (Auth::check())
                                         <li><a href="{{ URL::to('vendors/create') }}">Add Vendor</a></li>
-                                        @endunless
+                                        @endif
                                     </ul>
                                 </li>
                             </ul>
