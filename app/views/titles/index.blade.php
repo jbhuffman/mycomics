@@ -34,7 +34,7 @@
                 <td>
                     @if (count($value->mybooks) <= 0)
                     <!-- delete the title (uses the destroy method DESTROY /titles/{id} -->
-                    {{ Form::open(array('url' => 'mybooks/' . $value->id, 'class' => 'pull-right')) }}
+                    {{ Form::open(array('url' => 'titles/' . $value->id, 'class' => 'pull-right')) }}
                         {{ Form::hidden('_method', 'DELETE') }}
                         {{ Form::submit('Delete', array('class' => 'btn btn-warning delete-button')) }}
                     {{ Form::close() }}
