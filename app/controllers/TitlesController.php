@@ -18,7 +18,7 @@ class TitlesController extends \BaseController
     public function index()
     {
         // get all titles
-        $titles = Title::select('*')->orderby('title')->remember(5)->with('mybooks')->get();
+        $titles = Title::select('*')->orderby('title')->with('mybooks')->get();
 
         // load the view and pass the titles
         return View::make('titles.index')
