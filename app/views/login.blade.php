@@ -45,7 +45,7 @@
             <div class="container-fluid">
                 <div id="content">
                     {{ Form::open(array('url' => 'login', 'class' => 'form-horizontal')) }}
-                    <input type="hidden" name="token" value="{{ $token }}">
+                    <!--input type="hidden" name="token" value="{{ $token }}"-->
                     <div class="col-sm-12"><h1>Login</h1></div>
 
                     <!-- if there are login errors, show them here -->
