@@ -10,3 +10,5 @@ Thumbs.db
 =======
 .env.*.php
 .env.php
+sftp-config.json
+
